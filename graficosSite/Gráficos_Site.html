@@ -1,0 +1,80 @@
+<html lang="pt-br">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Teste Gráfico de Barras</title>
+  </head>
+  <body class="bg-success">
+      <div class="col-8 offset-2 my-5">
+          <div class="card">
+              <div class="card-body">
+                <h5>Teste Gráfico Faixa Etária</h5>
+                <hr>
+                <canvas id="myChart"></canvas>          
+              </div>
+          </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+    
+    <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'doughnut',
+
+          // The data for our dataset
+          data: {
+              labels: ['Feminino','Masculino','Outro','Não Informado'],
+              datasets: [{
+                  label: 'Gráfico por Idade',
+                  padding: 2000,
+                  textAlign: 'left',
+                  backgroundColor: [
+                  'rgb(93, 95, 239, 100)',
+                  'rgb(249, 186, 0, 1)',
+                  'rgb(47, 138, 229, 1)',
+                  'rgb(238, 234, 135, 1)'                
+              ],
+                  borderColor: [
+                  'rgb(93, 95, 239, 1)',
+                  'rgb(249, 186, 0, 1)',
+                  'rgb(47, 138, 229, 1)',
+                  'rgb(238, 234, 135, 1)'                
+              ],
+                  
+                  data: [30,20,15,8]
+                  
+              }]
+          },
+
+          // Configuration options go here
+          options: {
+            cutoutPercentage: 40,
+            legend:{
+              position: 'chartArea',
+              align: 'end',
+              pointStyle: 'circle',
+              filter: null,
+              boxWidth: 120,
+              boxHeigth: 'font.size'
+
+            },
+            
+            animation: {
+              animateScale: true
+            }
+            
+          }
+             
+        });
+     
+    </script>
+  
+  </body>
+</html>
